@@ -1,0 +1,13 @@
+.table,
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+#presentation {
+  background-color: rgb(169, 204, 14);
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, repeat;
+  padding: 15px;
+}

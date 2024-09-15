@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3307
--- Généré le : mar. 21 mai 2024 à 00:51
+-- Généré le : dim. 15 sep. 2024 à 09:58
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.0.30
 
@@ -30,8 +30,16 @@ SET time_zone = "+00:00";
 CREATE TABLE `animal` (
   `animal_id` int(11) NOT NULL,
   `prenom` varchar(50) NOT NULL,
-  `etat` varchar(50) NOT NULL
+  `etat` varchar(50) NOT NULL,
+  `habitat_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `animal`
+--
+
+INSERT INTO `animal` (`animal_id`, `prenom`, `etat`, `habitat_id`) VALUES
+(7, 'leo', 'ok', 1);
 
 -- --------------------------------------------------------
 
@@ -67,17 +75,6 @@ INSERT INTO `avis` (`avis_id`, `pseudo`, `commentaire`, `isVisible`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `category`
---
-
-CREATE TABLE `category` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `habitat`
 --
 
@@ -85,8 +82,16 @@ CREATE TABLE `habitat` (
   `habitat_id` int(11) NOT NULL,
   `nom` varchar(50) NOT NULL,
   `description` varchar(50) NOT NULL,
-  `commentaire_habitat` varchar(50) NOT NULL
+  `commentaire_habitat` varchar(50) NOT NULL,
+  `image_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `habitat`
+--
+
+INSERT INTO `habitat` (`habitat_id`, `nom`, `description`, `commentaire_habitat`, `image_id`) VALUES
+(1, 'savane', 'petit arbustes et herbes', 'ok', NULL);
 
 -- --------------------------------------------------------
 
@@ -96,7 +101,8 @@ CREATE TABLE `habitat` (
 
 CREATE TABLE `image` (
   `image_id` int(11) NOT NULL,
-  `image_data` blob NOT NULL
+  `image_data` blob NOT NULL,
+  `habitat_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -107,19 +113,9 @@ CREATE TABLE `image` (
 
 CREATE TABLE `race` (
   `race_id` int(11) NOT NULL,
-  `abel` varchar(50) NOT NULL
+  `abel` varchar(50) NOT NULL,
+  `animal_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `race`
---
-
-INSERT INTO `race` (`race_id`, `abel`) VALUES
-(1, '[value-2]'),
-(2, '[value-2]'),
-(3, '[value-2]'),
-(4, '[value-2]'),
-(5, '[value-2]');
 
 -- --------------------------------------------------------
 
@@ -130,7 +126,10 @@ INSERT INTO `race` (`race_id`, `abel`) VALUES
 CREATE TABLE `rapport_veterinaire` (
   `rapport_veterinaire_id` int(11) NOT NULL,
   `date` date NOT NULL,
-  `detail` varchar(50) NOT NULL
+  `detail` varchar(50) NOT NULL,
+  `animal_id` int(11) NOT NULL,
+  `repas` varchar(20) NOT NULL,
+  `gram` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -141,7 +140,27 @@ CREATE TABLE `rapport_veterinaire` (
 
 CREATE TABLE `role` (
   `role_id` int(11) NOT NULL,
-  `label` varchar(50) NOT NULL
+  `role_utilisateur` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `role`
+--
+
+INSERT INTO `role` (`role_id`, `role_utilisateur`) VALUES
+(1, 'administrateur'),
+(2, 'veterinaire'),
+(3, 'employé');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `role_utilisateur`
+--
+
+CREATE TABLE `role_utilisateur` (
+  `role_id` int(11) NOT NULL,
+  `Username` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -159,36 +178,24 @@ CREATE TABLE `service` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `user`
---
-
-CREATE TABLE `user` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `nickname` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `utilisateur`
 --
 
 CREATE TABLE `utilisateur` (
-  `Username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(70) NOT NULL,
   `nom` varchar(50) NOT NULL,
-  `prenom` varchar(50) NOT NULL
+  `prenom` varchar(50) NOT NULL,
+  `role_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`Username`, `password`, `nom`, `prenom`) VALUES
-('jane_smith', 'Jane', 'Smith', 'janes'),
-('paul', 'alex', 'rené', 'piler');
+INSERT INTO `utilisateur` (`username`, `password`, `nom`, `prenom`, `role_id`) VALUES
+('paul', '$2y$10$JCqm06q6nicsfXri5ir9U.sufjIuWuWlJNgQE3A7Vb480fuEmjkf2', 'rené', 'pilon', 1),
+('pille', 'pli', 'pliion', 'pliat', 2);
 
 --
 -- Index pour les tables déchargées
@@ -198,7 +205,8 @@ INSERT INTO `utilisateur` (`Username`, `password`, `nom`, `prenom`) VALUES
 -- Index pour la table `animal`
 --
 ALTER TABLE `animal`
-  ADD PRIMARY KEY (`animal_id`);
+  ADD PRIMARY KEY (`animal_id`),
+  ADD KEY `habitat_id` (`habitat_id`);
 
 --
 -- Index pour la table `avis`
@@ -207,42 +215,45 @@ ALTER TABLE `avis`
   ADD PRIMARY KEY (`avis_id`);
 
 --
--- Index pour la table `category`
---
-ALTER TABLE `category`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Index pour la table `habitat`
 --
 ALTER TABLE `habitat`
-  ADD PRIMARY KEY (`habitat_id`);
+  ADD PRIMARY KEY (`habitat_id`),
+  ADD KEY `image_id` (`image_id`);
 
 --
 -- Index pour la table `image`
 --
 ALTER TABLE `image`
-  ADD PRIMARY KEY (`image_id`);
+  ADD PRIMARY KEY (`image_id`),
+  ADD KEY `image_ibfk_1` (`habitat_id`);
 
 --
 -- Index pour la table `race`
 --
 ALTER TABLE `race`
-  ADD PRIMARY KEY (`race_id`);
+  ADD PRIMARY KEY (`race_id`),
+  ADD KEY `animal_id` (`animal_id`);
 
 --
 -- Index pour la table `rapport_veterinaire`
 --
 ALTER TABLE `rapport_veterinaire`
   ADD PRIMARY KEY (`rapport_veterinaire_id`),
-  ADD KEY `rapport_veterinaire_ibfk_1` (`detail`);
+  ADD KEY `animal_id` (`animal_id`);
 
 --
 -- Index pour la table `role`
 --
 ALTER TABLE `role`
-  ADD PRIMARY KEY (`role_id`),
-  ADD KEY `possede` (`label`);
+  ADD PRIMARY KEY (`role_id`);
+
+--
+-- Index pour la table `role_utilisateur`
+--
+ALTER TABLE `role_utilisateur`
+  ADD KEY `Username` (`Username`),
+  ADD KEY `role_id` (`role_id`);
 
 --
 -- Index pour la table `service`
@@ -251,18 +262,10 @@ ALTER TABLE `service`
   ADD PRIMARY KEY (`service_id`);
 
 --
--- Index pour la table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`),
-  ADD UNIQUE KEY `nickname` (`nickname`);
-
---
 -- Index pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  ADD PRIMARY KEY (`Username`);
+  ADD PRIMARY KEY (`username`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -272,7 +275,7 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT pour la table `animal`
 --
 ALTER TABLE `animal`
-  MODIFY `animal_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `animal_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `avis`
@@ -281,16 +284,10 @@ ALTER TABLE `avis`
   MODIFY `avis_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT pour la table `category`
---
-ALTER TABLE `category`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
 -- AUTO_INCREMENT pour la table `habitat`
 --
 ALTER TABLE `habitat`
-  MODIFY `habitat_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `habitat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `image`
@@ -302,7 +299,7 @@ ALTER TABLE `image`
 -- AUTO_INCREMENT pour la table `race`
 --
 ALTER TABLE `race`
-  MODIFY `race_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `race_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `rapport_veterinaire`
@@ -314,7 +311,7 @@ ALTER TABLE `rapport_veterinaire`
 -- AUTO_INCREMENT pour la table `role`
 --
 ALTER TABLE `role`
-  MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `service`
@@ -323,38 +320,45 @@ ALTER TABLE `service`
   MODIFY `service_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `user`
---
-ALTER TABLE `user`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
 -- Contraintes pour les tables déchargées
 --
+
+--
+-- Contraintes pour la table `animal`
+--
+ALTER TABLE `animal`
+  ADD CONSTRAINT `animal_ibfk_1` FOREIGN KEY (`habitat_id`) REFERENCES `habitat` (`habitat_id`);
 
 --
 -- Contraintes pour la table `habitat`
 --
 ALTER TABLE `habitat`
-  ADD CONSTRAINT `habitat_ibfk_1` FOREIGN KEY (`habitat_id`) REFERENCES `animal` (`animal_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `habitat_ibfk_2` FOREIGN KEY (`image_id`) REFERENCES `image` (`image_id`);
 
 --
 -- Contraintes pour la table `image`
 --
 ALTER TABLE `image`
-  ADD CONSTRAINT `image_ibfk_1` FOREIGN KEY (`image_id`) REFERENCES `habitat` (`habitat_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `image_ibfk_1` FOREIGN KEY (`habitat_id`) REFERENCES `habitat` (`habitat_id`);
+
+--
+-- Contraintes pour la table `race`
+--
+ALTER TABLE `race`
+  ADD CONSTRAINT `race_ibfk_1` FOREIGN KEY (`animal_id`) REFERENCES `animal` (`animal_id`);
 
 --
 -- Contraintes pour la table `rapport_veterinaire`
 --
 ALTER TABLE `rapport_veterinaire`
-  ADD CONSTRAINT `rapport_veterinaire_ibfk_2` FOREIGN KEY (`rapport_veterinaire_id`) REFERENCES `animal` (`animal_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `rapport_veterinaire_ibfk_2` FOREIGN KEY (`animal_id`) REFERENCES `animal` (`animal_id`);
 
 --
--- Contraintes pour la table `role`
+-- Contraintes pour la table `role_utilisateur`
 --
-ALTER TABLE `role`
-  ADD CONSTRAINT `possede` FOREIGN KEY (`label`) REFERENCES `utilisateur` (`Username`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `role_utilisateur`
+  ADD CONSTRAINT `role_utilisateur_ibfk_1` FOREIGN KEY (`Username`) REFERENCES `utilisateur` (`username`),
+  ADD CONSTRAINT `role_utilisateur_ibfk_2` FOREIGN KEY (`role_id`) REFERENCES `role` (`role_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
