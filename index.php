@@ -6,7 +6,7 @@ require_once  "templates/header.php";
 
 //$avis = getavis($conn);
 //var_dump($avis);
-$hash = password_hash('alex', PASSWORD_DEFAULT);
+$hash = password_hash('pilon', PASSWORD_DEFAULT);
 var_dump($hash)
 ?>
 
@@ -14,7 +14,9 @@ var_dump($hash)
 include_once 'templates/caroussel.php';
 ?>
 
-
+<?php
+include_once 'monAvis.php';
+?>
 
 
 <?php

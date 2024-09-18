@@ -21,11 +21,11 @@ if (isset($_POST['loginUser'])) {
     if ($utilisateur['role_id'] == '1') {
       header('location: admin_dashboard.php');
     } elseif ($utilisateur['role_id'] == '2') {
-      header('location: veterinaire_dashboard.php');
+      header('location: veterinaire.php');
       // header('location: index.php');
       //var_dump($username);
     } else {
-      header('location: employe_dashboard.php');
+      header('location: employe.php');
     }
   } else {
     // afficher une erreur
@@ -55,7 +55,7 @@ if (isset($_POST['loginUser'])) {
         <input type="text" name="username" id="username" class="form-control">
       </div>
       <div class="mb-3">
-        <label for="password" class="form-label">Mot de pase</label>
+        <label for="password" class="form-label">Mot de passe</label>
         <input type="password" name="password" id="password" class="form-control">
       </div>
 

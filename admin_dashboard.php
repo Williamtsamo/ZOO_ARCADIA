@@ -27,7 +27,7 @@ $utilisateur = $conn->query("SELECT * FROM utilisateur")->fetchAll(PDO::FETCH_AS
 <body>
     <div class="container">
         <h1>Tableau de bord administrateur</h1>
-        <p>Bienvenue, <?= $_SESSION['utilisateur']['username']; ?>!</p>
+        <p>Bienvenue, <?//= $_SESSION['utilisateur']['username']; //?>!</p>
 
         <h2>Gestion des utilisateurs</h2>
         <table class="table table-striped">

@@ -1,7 +1,7 @@
 <?php
 
 //include_once("templates/header.php");
-require 'header.php';
+require_once 'header.php';
 //include_once("lib/avis.php");
 
 //$avis = getavis($conn);
@@ -74,7 +74,7 @@ require 'header.php';
                             < <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-sm btn-outline-secondary">commander</button>
-            
+
                                 </div>
 
                                 <small class="text-body-secondary">merci</small>
@@ -92,10 +92,10 @@ require 'header.php';
                     <div class="card-body">
 
                         <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">commander</button>
-            
-                                </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">commander</button>
+
+                            </div>
 
                             <small class="text-body-secondary">9 mins</small>
                         </div>
@@ -110,10 +110,10 @@ require 'header.php';
                     <div class="card-body">
 
                         <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">commander</button>
-            
-                                </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">commander</button>
+
+                            </div>
 
                             <small class="text-body-secondary">9 mins</small>
                         </div>

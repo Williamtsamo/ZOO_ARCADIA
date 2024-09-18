@@ -21,14 +21,14 @@ require_once 'lib/avis.php';
                 <div class="col">
                     <div class="card shadow-sm">
 
-                        <img src="/web/assets/images/chimpanze.jpg" class="bd-placeholder-img card-img-top" width="100%" height=100% xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <img src="assets/images/chimpanze.jpg" class="bd-placeholder-img card-img-top" width="100%" height=100% xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
 
 
                     </div>
                 </div>
                 <div class="col">
                     <div class="card shadow-sm">
-                        <img src="/web/assets/images/foret dense.jpg" class="bd-placeholder-img card-img-top" width="100%" height=100% xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <img src="assets/images/foret dense.jpg" class="bd-placeholder-img card-img-top" width="100%" height=100% xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
 
 
                     </div>
@@ -36,7 +36,7 @@ require_once 'lib/avis.php';
 
                 <div class="col">
                     <div class="card shadow-sm">
-                        <img src="/web/assets/images/oiseaux.jpg" class="bd-placeholder-img card-img-top" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <img src="assets/images/oiseaux.jpg" class="bd-placeholder-img card-img-top" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
 
 
                     </div>
@@ -64,14 +64,14 @@ require_once 'lib/avis.php';
                         <div class="col">
                             <div class="card shadow-sm">
 
-                                <img src="/web/assets/images/savane.jpg" class="bd-placeholder-img card-img-top" width="100%" height=100% xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                                <img src="assets/images/savane.jpg" class="bd-placeholder-img card-img-top" width="100%" height=100% xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
 
 
                             </div>
                         </div>
                         <div class="col">
                             <div class="card shadow-sm">
-                                <img src="/web/assets/images/herbivores savane.jpg" class="bd-placeholder-img card-img-top" width="100%" height=100% xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                                <img src="assets/images/herbivores savane.jpg" class="bd-placeholder-img card-img-top" width="100%" height=100% xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
 
 
                             </div>
@@ -79,7 +79,7 @@ require_once 'lib/avis.php';
 
                         <div class="col">
                             <div class="card shadow-sm">
-                                <img src="/web/assets/images/les fauves.jpg" class="bd-placeholder-img card-img-top" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                                <img src="assets/images/les fauves.jpg" class="bd-placeholder-img card-img-top" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
 
                             </div>
                         </div>
@@ -112,14 +112,14 @@ require_once 'lib/avis.php';
                             <div class="col">
                                 <div class="card shadow-sm">
 
-                                    <img src="/web/assets/images/milieu aquatique.jpg" class="bd-placeholder-img card-img-top" width="100%" height=100% xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                                    <img src="assets/images/milieu aquatique.jpg" class="bd-placeholder-img card-img-top" width="100%" height=100% xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
 
 
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="card shadow-sm">
-                                    <img src="/web/assets/images/tortue marine.jpg" class="bd-placeholder-img card-img-top" width="100%" height=100% xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                                    <img src="assets/images/tortue marine.jpg" class="bd-placeholder-img card-img-top" width="100%" height=100% xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
 
 
                                 </div>
@@ -127,7 +127,7 @@ require_once 'lib/avis.php';
 
                             <div class="col">
                                 <div class="card shadow-sm">
-                                    <img src="/web/assets/images/lamaris.jpg" class="bd-placeholder-img card-img-top" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                                    <img src="assets/images/lamaris.jpg" class="bd-placeholder-img card-img-top" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
 
 
                                 </div>

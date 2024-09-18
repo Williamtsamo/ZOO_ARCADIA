@@ -23,7 +23,7 @@ require_once("lib/avis.php");
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <div class="col">
                 <div class="card shadow-sm">
-                    <img src="/web/assets/images/Restauration.jpg" class="bd-placeholder-img card-img-top" width="100%" height=100% xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <img src="assets/images/Restauration.jpg" class="bd-placeholder-img card-img-top" width="100%" height=100% xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 </div>
                 
             </div>
@@ -46,7 +46,7 @@ un guide (gratuit)</h2>
             <div class="col">
                 <div class="card shadow-sm">
 
-                    <img src="/web/assets/images/habitats du zoo.jpg" class="bd-placeholder-img card-img-top" width="100%" height=100% xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <img src="assets/images/habitats du zoo.jpg" class="bd-placeholder-img card-img-top" width="100%" height=100% xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
 
 
                 </div>
@@ -68,7 +68,7 @@ un guide (gratuit)</h2>
             <div class="col">
                 <div class="card shadow-sm">
 
-                    <img src="/web/assets/images/mini train.jpg" class="bd-placeholder-img card-img-top" width="100%" height=100% xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <img src="assets/images/mini train.jpg" class="bd-placeholder-img card-img-top" width="100%" height=100% xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
 
 
                 </div>

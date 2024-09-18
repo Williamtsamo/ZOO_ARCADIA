@@ -18,7 +18,7 @@ require_once "lib/session.php";
         <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
             <div class="col-md-3 mb-2 mb-md-0">
                 <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
-                    <img src="/web/assets/images/logo.jpg" class="bi" width="80" height="70" role="img" aria-label="Bootstrap">
+                    <img src="assets/images/logo.jpg" class="bi" width="80" height="70" role="img" aria-label="Bootstrap">
                     <use xlink:href="#bootstrap"></use></svg>
                 </a>
             </div>
@@ -32,7 +32,7 @@ require_once "lib/session.php";
 
                 <li><a href="differents_habitats.php" class="nav-link px-2">habitats</a></li>
 
-                <li><a href="affiche.php" class="nav-link px-2">Contact</a></li>
+                <li><a href="contact.php" class="nav-link px-2">Contact</a></li>
             </ul>
             <div class="col-md-3 text-end">
                 <?php if (isset($_SESSION['utilisateur'])) { ?>
