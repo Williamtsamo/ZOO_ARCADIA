@@ -1,4 +1,4 @@
-<div id="presentation" class="bg-warning-subtle p-2 text-dark ">
+<div id="presentation" class="bg-success p-2 text-dark bg-opacity-60">
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5 mx-auto p-2">
         <div class="col-10 col-sm-8 col-lg-6">
             <img width="300" src="assets/images/LOGO.jpg" alt="Test">
@@ -9,7 +9,7 @@
 
         </div>
     </div>
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleAutoplaying" class="carousel slide " data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="assets/images/lion.jpg" class="d-block w-50" alt="...">
@@ -28,7 +28,7 @@
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
-            
+
         </button>
     </div>
 </div>

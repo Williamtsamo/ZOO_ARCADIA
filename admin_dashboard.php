@@ -10,7 +10,7 @@
 require_once 'lib/pdo.php';
 require_once 'templates/header.php';
 
-// Exemple de récupération des utilisateurs depuis la base de données
+
 $utilisateur = $conn->query("SELECT * FROM utilisateur")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 

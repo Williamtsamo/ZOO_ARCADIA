@@ -146,6 +146,18 @@ require_once 'lib/avis.php';
                             - <strong><a href="">Homard :</a></strong> Les homards sont des crustacés marins prisés pour leur chair délicieuse, vivant souvent dans des crevasses rocheuses au fond de l'océan.<br>
                             - <strong><a href="">Pieuvre :</a></strong> Les pieuvres sont des céphalopodes intelligents dotés de huit bras souples et d'une capacité à changer de couleur pour se camoufler.<br>
                         </p>
+                        <h1>Liste des Animaux</h1>
+
+    <ul>
+        <?php foreach ($animaux as $animal): ?>
+            <li>
+                <!-- Lorsqu'on clique sur le prénom, on est redirigé vers animal.php avec l'id de l'animal -->
+                <a href="animal.php?id=<?= $animal['id']; ?>">
+                    <?= htmlspecialchars($animal['prenom']); ?>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
                     </div>
                 </div>
 
