@@ -1,2 +1,1 @@
-let pass=  document.getElementById('username')
-       console.log('pass');
+const fs=  require ("fs")

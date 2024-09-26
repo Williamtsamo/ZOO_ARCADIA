@@ -2,7 +2,7 @@
   require_once 'templates/header.php'; // Assurez-vous que ce fichier établit la connexion PDO ($conn)
   include_once("lib/pdo.php");
   // Requête SQL pour récupérer tous les animaux
-  $sql = "SELECT  prenom, animal_id, habitat_id FROM animal";
+  $sql = "SELECT  prenom, animal_id,type_habitat FROM animal";
   $stmt = $conn->prepare($sql);
   $stmt->execute();
   $animaux = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -26,10 +26,10 @@
           <ul>
             <h5>Liste des Animaux de la savane</h5>
             <?php foreach ($animaux as $animal): ?>
-              <?php if ($animal['habitat_id'] == 1): ?>
+              <?php if ($animal['type_habitat'] == 'savane'): ?>
                 <li>
                   <!-- Lorsqu'on clique sur le prénom, on est redirigé vers animal.php avec l'id de l'animal -->
-                  <a href="animal.php?animal_id=<?= $animal['animal_id']; ?>">
+                  <a href="image.php?animal_id=<?= $animal['animal_id']; ?>">
                     <?= htmlspecialchars($animal['prenom']); ?>
 
                   </a>
@@ -70,10 +70,10 @@
           <ul>
             <h5>Liste des Animaux des marais</h5>
             <?php foreach ($animaux as $animal): ?>
-              <?php if ($animal['habitat_id'] == 2): ?>
+              <?php if ($animal['type_habitat'] == 'marais'): ?>
                 <li>
                   <!-- Lorsqu'on clique sur le prénom, on est redirigé vers animal.php avec l'id de l'animal -->
-                  <a href="animal.php?animal_id=<?= $animal['animal_id']; ?>">
+                  <a href="image.php?animal_id=<?= $animal['animal_id']; ?>">
                     <?= htmlspecialchars($animal['prenom']); ?>
 
                   </a>
@@ -104,10 +104,10 @@
           <ul>
             <h5>Liste des Animaux de la foret</h5>
             <?php foreach ($animaux as $animal): ?>
-              <?php if ($animal['habitat_id'] == 3): ?>
+              <?php if ($animal['type_habitat'] == 'foret'): ?>
                 <li>
-                  <!-- Lorsqu'on clique sur le prénom, on est redirigé vers animal.php avec l'id de l'animal -->
-                  <a href="animal.php?animal_id=<?= $animal['animal_id']; ?>">
+
+                  <a href="image.php?animal_id=<?= $animal['animal_id']; ?>">
                     <?= htmlspecialchars($animal['prenom']); ?>
 
                   </a>
