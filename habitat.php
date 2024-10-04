@@ -15,7 +15,7 @@
       <div class="feature col">
         <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
           <div class="card shadow-sm">
-            <img src="assets/images/oiseaux.jpg" class="bd-placeholder-img card-img-top" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <img src="assets/images/les fauves.jpg" class="bd-placeholder-img card-img-top" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
 
 
           </div>
@@ -48,7 +48,7 @@
 
         </div>
         <a href="#" class="icon-link">
-          Call to action
+          Retour
           <svg class="bi">
             <use xlink:href="#chevron-right"></use>
           </svg>
@@ -83,7 +83,7 @@
           </ul>
         </div>
         <a href="#" class="icon-link">
-          Call to action
+          Retour
           <svg class="bi">
             <use xlink:href="#chevron-right"></use>
           </svg>
@@ -92,14 +92,14 @@
       <div class="feature col">
         <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
           <div class="card shadow-sm">
-            <img src="assets/images/oiseaux.jpg" class="bd-placeholder-img card-img-top" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <img src="assets/images/foret dense.jpg" class="bd-placeholder-img card-img-top" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
 
 
           </div>
         </div>
         <h3 class="fs-2 text-body-emphasis">Forêt</h3>
         <div>
-          <p class="  p-3 text-success-emphasis bg-success-subtle border border-success-subtle rounded-3" class="text-center">La foret densLes animaux de la savane sont adaptés à vivre dans les vastes étendues d'herbes et d'arbustes des régions tropicales et subtropicales. Voici une brève description de quelques-uns de ces animaux :
+          <p class="  p-3 text-success-emphasis bg-success-subtle border border-success-subtle rounded-3" class="text-center">Les forêts denses abritent une grande variété d’animaux fascinants. Parmi eux, on trouve le cerf majestueux, le renard rusé, et le lynx mystérieux1. Ces animaux jouent un rôle crucial dans l’écosystème forestier, chacun ayant des adaptations uniques pour survivre dans cet environnement riche et complexe :
 
           <ul>
             <h5>Liste des Animaux de la foret</h5>

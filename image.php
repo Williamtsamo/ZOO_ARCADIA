@@ -52,7 +52,7 @@ WHERE a.animal_id = :animal_id;";
 
 
             <?php if (!empty($animal['image_data'])): ?>
-                <img src="assets/images/les fauves.jpg" ,<?= base64_encode($animal['image_data']); ?>" alt="Image de l'animal" style="width: 200px;">
+                <img src="assets/images/les fauves.jpg" ,<?= base64_encode($animal['image_data']); ?> alt="Image de l'animal" style="width: 200px;">
             <?php else: ?>
                 <p>Aucune image disponible pour cet animal.</p>
             <?php endif; ?>

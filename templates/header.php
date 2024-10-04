@@ -26,15 +26,15 @@ require_once "lib/session.php";
             </div>
 
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="index.php" class="nav-link px-2">Acceuil</a></li>
-                <li><a href="service.php" class="nav-link px-2">services</a></li>
+                <li><a href="index.php" class="nav-link px-2 fs-1 text-primary">Acceuil</a></li>
+                <li><a href="service.php" class="nav-link px-2 fs-1 text-primary">services</a></li>
 
 
 
 
-                <li><a href="habitat.php" class="nav-link px-2">habitats</a></li>
+                <li><a href="habitat.php" class="nav-link px-2 fs-1 text-primary">habitats</a></li>
 
-                <li><a href="contact.php" class="nav-link px-2">Contact</a></li>
+                <li><a href="contact.php" class="nav-link px-2 fs-1 text-primary">Contact</a></li>
             </ul>
             <div class="col-md-3 text-end">
                 <?php if (isset($_SESSION['utilisateur'])) { ?>
