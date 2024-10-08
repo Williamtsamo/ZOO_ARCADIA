@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3307
--- Généré le : dim. 15 sep. 2024 à 09:58
+-- Généré le : mar. 08 oct. 2024 à 13:35
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.0.30
 
@@ -31,15 +31,49 @@ CREATE TABLE `animal` (
   `animal_id` int(11) NOT NULL,
   `prenom` varchar(50) NOT NULL,
   `etat` varchar(50) NOT NULL,
-  `habitat_id` int(11) NOT NULL
+  `type_habitat` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `animal`
 --
 
-INSERT INTO `animal` (`animal_id`, `prenom`, `etat`, `habitat_id`) VALUES
-(7, 'leo', 'ok', 1);
+INSERT INTO `animal` (`animal_id`, `prenom`, `etat`, `type_habitat`) VALUES
+(7, 'lion', 'ok', 'savane'),
+(8, 'girafe', 'ok', 'savane'),
+(11, 'Zebre', 'ok', 'savane'),
+(12, 'singe', 'ok', 'foret'),
+(13, 'tortue', 'ok', 'marais'),
+(14, 'lynx', 'ok', 'foret'),
+(16, 'sanglier', 'ok', 'foret'),
+(17, 'cerf', 'ok', 'foret'),
+(18, 'loutre', '', 'marais'),
+(19, 'flamant rose', '', 'marais');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `animal_habitat`
+--
+
+CREATE TABLE `animal_habitat` (
+  `animal_id` int(11) NOT NULL,
+  `habitat_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `animal_habitat`
+--
+
+INSERT INTO `animal_habitat` (`animal_id`, `habitat_id`) VALUES
+(7, 1),
+(8, 1),
+(11, 1),
+(13, 2),
+(19, 2),
+(12, 3),
+(14, 3),
+(16, 3);
 
 -- --------------------------------------------------------
 
@@ -81,17 +115,18 @@ INSERT INTO `avis` (`avis_id`, `pseudo`, `commentaire`, `isVisible`) VALUES
 CREATE TABLE `habitat` (
   `habitat_id` int(11) NOT NULL,
   `nom` varchar(50) NOT NULL,
-  `description` varchar(50) NOT NULL,
-  `commentaire_habitat` varchar(50) NOT NULL,
-  `image_id` int(11) DEFAULT NULL
+  `description` varchar(120) NOT NULL,
+  `commentaire_habitat` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `habitat`
 --
 
-INSERT INTO `habitat` (`habitat_id`, `nom`, `description`, `commentaire_habitat`, `image_id`) VALUES
-(1, 'savane', 'petit arbustes et herbes', 'ok', NULL);
+INSERT INTO `habitat` (`habitat_id`, `nom`, `description`, `commentaire_habitat`) VALUES
+(1, 'savane', 'La savane est une vaste plaine tropicale, parsemée d’arbres et d’herbes hautes, riche en biodiversité', 'ok'),
+(2, 'marais', 'Les marais sont des zones humides riches en biodiversité, essentielles pour la régulation des écosystèmes ', ''),
+(3, 'foret', 'Une forêt est une vaste étendue de terrain couverte d’arbres, essentielle pour la biodiversité et l’écosystème', '');
 
 -- --------------------------------------------------------
 
@@ -105,6 +140,13 @@ CREATE TABLE `image` (
   `habitat_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Déchargement des données de la table `image`
+--
+
+INSERT INTO `image` (`image_id`, `image_data`, `habitat_id`) VALUES
+(2, 0x30, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -113,9 +155,26 @@ CREATE TABLE `image` (
 
 CREATE TABLE `race` (
   `race_id` int(11) NOT NULL,
-  `abel` varchar(50) NOT NULL,
+  `nom` varchar(50) NOT NULL,
   `animal_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `race`
+--
+
+INSERT INTO `race` (`race_id`, `nom`, `animal_id`) VALUES
+(1, 'Lion d\'Asie, Panthera leo persica', 7),
+(2, 'Tamarin empereur (Saguinus imperator)', 12),
+(3, 'Tortue étoilée (Geochelone elegans)', 13),
+(4, 'Hynobiidae : Salamandres asiatiques,', 14),
+(5, 'Girafe masaï (Giraffa tippelskirchi)', 8),
+(6, 'Zèbre des plaines (Equus quagga)', 11),
+(7, 'Cerf sika (Cervus nippon) : Originaire d’Asie de l', 17),
+(8, 'Lynx du Canada (Lynx canadensis)', 14),
+(9, '  Phacochère commun (Phacochoerus africanus', 16),
+(10, 'Loutre géante (Pteronura brasiliensis', 18),
+(11, 'Flamant des Caraïbes (Phoenicopterus ruber', 19);
 
 -- --------------------------------------------------------
 
@@ -194,8 +253,10 @@ CREATE TABLE `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`username`, `password`, `nom`, `prenom`, `role_id`) VALUES
+('alain', '$2y$10$DpcbVa0vRmNdXn1Owf7lh.dboiwWPXOz/q6v9pZThJU/fjuLNyiIq', 'elvis', 'presle', 2),
+('aline', '$2y$10$OEA.YCui/lMa.rSozT4wlOMwMRp34lATOZJaH9sDJ19L4Aq4Q61dW', 'remi', 'nicole', 3),
 ('paul', '$2y$10$JCqm06q6nicsfXri5ir9U.sufjIuWuWlJNgQE3A7Vb480fuEmjkf2', 'rené', 'pilon', 1),
-('pille', 'pli', 'pliion', 'pliat', 2);
+('paulin', 'merci', 'romi', 'pierre', 0);
 
 --
 -- Index pour les tables déchargées
@@ -205,7 +266,14 @@ INSERT INTO `utilisateur` (`username`, `password`, `nom`, `prenom`, `role_id`) V
 -- Index pour la table `animal`
 --
 ALTER TABLE `animal`
+  ADD PRIMARY KEY (`animal_id`);
+
+--
+-- Index pour la table `animal_habitat`
+--
+ALTER TABLE `animal_habitat`
   ADD PRIMARY KEY (`animal_id`),
+  ADD UNIQUE KEY `animal_id` (`animal_id`),
   ADD KEY `habitat_id` (`habitat_id`);
 
 --
@@ -218,15 +286,14 @@ ALTER TABLE `avis`
 -- Index pour la table `habitat`
 --
 ALTER TABLE `habitat`
-  ADD PRIMARY KEY (`habitat_id`),
-  ADD KEY `image_id` (`image_id`);
+  ADD PRIMARY KEY (`habitat_id`);
 
 --
 -- Index pour la table `image`
 --
 ALTER TABLE `image`
   ADD PRIMARY KEY (`image_id`),
-  ADD KEY `image_ibfk_1` (`habitat_id`);
+  ADD KEY `habitat_id` (`habitat_id`);
 
 --
 -- Index pour la table `race`
@@ -275,7 +342,7 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT pour la table `animal`
 --
 ALTER TABLE `animal`
-  MODIFY `animal_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `animal_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT pour la table `avis`
@@ -287,19 +354,19 @@ ALTER TABLE `avis`
 -- AUTO_INCREMENT pour la table `habitat`
 --
 ALTER TABLE `habitat`
-  MODIFY `habitat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `habitat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `image`
 --
 ALTER TABLE `image`
-  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `race`
 --
 ALTER TABLE `race`
-  MODIFY `race_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `race_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `rapport_veterinaire`
@@ -324,16 +391,11 @@ ALTER TABLE `service`
 --
 
 --
--- Contraintes pour la table `animal`
+-- Contraintes pour la table `animal_habitat`
 --
-ALTER TABLE `animal`
-  ADD CONSTRAINT `animal_ibfk_1` FOREIGN KEY (`habitat_id`) REFERENCES `habitat` (`habitat_id`);
-
---
--- Contraintes pour la table `habitat`
---
-ALTER TABLE `habitat`
-  ADD CONSTRAINT `habitat_ibfk_2` FOREIGN KEY (`image_id`) REFERENCES `image` (`image_id`);
+ALTER TABLE `animal_habitat`
+  ADD CONSTRAINT `animal_habitat_ibfk_1` FOREIGN KEY (`animal_id`) REFERENCES `animal` (`animal_id`),
+  ADD CONSTRAINT `animal_habitat_ibfk_2` FOREIGN KEY (`habitat_id`) REFERENCES `habitat` (`habitat_id`);
 
 --
 -- Contraintes pour la table `image`
