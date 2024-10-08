@@ -36,7 +36,6 @@ try {
     // Configuration du mode d'erreur PDO
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    // Gestion de l'exception si une erreur de connexion survient
+    echo "erreur connexion";
     die('Erreur : ' . $e->getMessage());
 }
-?>
