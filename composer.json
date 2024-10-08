@@ -1,0 +1,7 @@
+{
+    "name": "mon-zoo-arcadia/heroku-php-app",
+    "description": "Mon application PHP déployée sur Heroku",
+    "require": {
+        "php": "^8.0"
+    }
+}
