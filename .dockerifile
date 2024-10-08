@@ -1,0 +1,18 @@
+# Use the official OpenJDK image as the base image
+FROM openjdk:17
+
+# Set the working directory in the container
+WORKDIR /usr/src/app
+
+# Copy the Maven pom.xml file to the working directory
+COPY pom.xml ./
+COPY src ./src
+
+# Build the application
+RUN mvn clean package
+
+# Expose the port the app runs on
+EXPOSE 8080
+
+# Define the command to run the application
+CMD ["java", "-jar", "target/myapp.jar"]
