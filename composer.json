@@ -1,9 +1,10 @@
 {
     "name": "mon-zoo-arcadia/heroku-php-app",
     "description": "Description de votre application",
-    "version": "1.0.0",  
+    "version": "1.0.0",
     "require": {
         "php": ">=7.4",
-        "some/package": "^1.0"
-    }
+        "some/package": "dev-master"
+    },
+    "minimum-stability": "dev"
 }
