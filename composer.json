@@ -1,7 +1,9 @@
 {
     "name": "mon-zoo-arcadia/heroku-php-app",
-    "description": "Mon application PHP déployée sur Heroku",
+    "description": "Description de votre application",
+    "version": "1.0.0",  
     "require": {
-        "php": "^8.0"
+        "php": ">=7.4",
+        "some/package": "^1.0"
     }
 }
