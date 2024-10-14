@@ -1,11 +1,5 @@
 <?php
 
-
-
-
-
-
-
 try {
     // Connexion à PostgreSQL avec PDO
     $conn = new PDO('pgsql:host=cfls9h51f4i86c.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com;port=5432;dbname=d15g9n3vdd2bhk', 'u2maj91261kaco', 'p5037b1dd27ab164cf7203f5ec7cbd8c43edabf99c7232fbe51e21e5bbfc39a4e');
