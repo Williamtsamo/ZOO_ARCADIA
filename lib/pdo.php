@@ -2,31 +2,26 @@
 
 
 
-//try {
-//    $conn = new PDO('mysql:dbname=arcadia;host=localhost:3307;charset=utf8', "root", "");
-// set the PDO error mode to exception
-//$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//echo "Connected";
-//} catch (PDOException $e) {
 
-//   die('Erreur : ' . $e->getMessage());
-//}
+
 
 
 try {
-    if (getenv('JAWSDB_URL') !== false) {
-        $dbparts = parse_url(getenv('JAWSDB_URL'));
+    // Connexion à PostgreSQL avec PDO
+    $conn = new PDO('pgsql:host=cfls9h51f4i86c.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com;port=5432;dbname=d15g9n3vdd2bhk', 'u2maj91261kaco', 'p5037b1dd27ab164cf7203f5ec7cbd8c43edabf99c7232fbe51e21e5bbfc39a4e');
+    
+    // Confirmation de la connexion réussie
+    echo "Connected to PostgreSQL database";
 
-        // Connexion à JawsDB via PDO
-        $hostname = $dbparts['mfplywfpf75qwuaz@gx97kbnhgjzh3efb.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'];
-        $username = $dbparts['e00pkwpgqc7iz7dk'];
-        $password = $dbparts['mfplywfpf75qwuaz'];
-        $database = ltrim($dbparts['nvpri7rto4mc24hf'], '/');
+    // Configuration du mode d'erreur PDO
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+} catch (PDOException $e) {
+    // Gestion des erreurs de connexion
+    echo "Erreur de connexion";
+    die('Erreur : ' . $e->getMessage());
+}
 
-
-        // Création de la connexion PDO avec JawsDB
-        $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
-        echo "Connected to JawsDB";
     } else {
         // Connexion à une base de données locale si JawsDB n'est pas disponible
         $conn = new PDO('mysql:host=localhost:3307;dbname=arcadia;charset=utf8', 'root', '');
